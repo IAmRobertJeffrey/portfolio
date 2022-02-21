@@ -74,7 +74,7 @@ color:${props => props.color ? props.color : "black"};
 	font-size:1.75rem;
 	margin-bottom:0px;
 	text-align:center;
-	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.3));
 `
 export const Project = styled.div`
 	width:100%;
