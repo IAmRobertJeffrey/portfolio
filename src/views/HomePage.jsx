@@ -22,7 +22,7 @@ const HomePage = () =>
 				</IntroductionTextWrapper>
 			</IntroductionWrapper>
 			<ProjectsWrapper color={colors.dark}>
-				<ProjectsHeading color={colors.white}>Projects</ProjectsHeading>
+				<ProjectsHeading color={colors.white}> Web development projects</ProjectsHeading>
 				<Project>
 					<ProjectTitle color={colors.white}>
 						Realtime Chat App
