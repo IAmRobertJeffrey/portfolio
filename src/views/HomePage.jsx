@@ -25,7 +25,7 @@ const HomePage = () =>
 					<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/clothes-shop'><ProjectLink type='button'>Contact Me</ProjectLink></a>
 					<IntroductionSocialsWrapper>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey'><AiFillGithub size="50px" color="#262534" /></a>
-						{/* <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/robert-jeffrey-4b885b211/'><AiFillLinkedin size="50px" color="#262534" /></a> */}
+						<a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/robert-jeffrey-4b885b211/'><AiFillLinkedin size="50px" color="#262534" /></a>
 						<a href='mailto:iamrobertjeffrey@gmail.com'><AiFillMail size="50px" color="#262534" /></a>
 					</IntroductionSocialsWrapper>
 				</IntroductionTextWrapper>
@@ -33,7 +33,7 @@ const HomePage = () =>
 			<ProjectsWrapper color={colors.dark}>
 				<ProjectsHeading color={colors.white}> Web development projects</ProjectsHeading>
 				<ProjectDescriptionText>
-					Here are some example projects I have created. Other projects, as well as the ones below, can all be found on my <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects"><strong>github.</strong></a>
+					Here are some example projects I have created. Other projects, as well as the ones below, can all be found on my <a target="_blank" rel="noreferrer" href="https://github.com/IAmRobertJeffrey"><strong>github.</strong></a>
 				</ProjectDescriptionText>
 				<Project>
 					<ProjectTitle color={colors.white}>
