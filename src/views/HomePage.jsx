@@ -78,7 +78,7 @@ const HomePage = () =>
 				</Project>
 			</ProjectsWrapper>
 			<ContactWrapper>
-				<ContactHeading color={colors.dark}> Contact Me</ContactHeading>
+				<ContactHeading color={colors.light}> Contact Me</ContactHeading>
 				<ContactForm>
 					<NameInput type={"text"} placeholder='Name*' />
 					<EmailInput type={"email"} placeholder='Email*' />
