@@ -29,7 +29,7 @@ const HomePage = () =>
 					</ProjectTitle>
 					<a target="_blank" rel="noreferrer" href='https://roberts-chatting.web.app/'><img width={"100%"} src='./img/loginScreen.jpg' alt='instant chat app' /></a>
 					<ProjectDescription>
-						<ProjectDescriptionText>This instant chat app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects">developer challenge</a> using React and Material-UI on the frontend and node/socketio on the backend.</ProjectDescriptionText>
+						<ProjectDescriptionText>This instant chat app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects">developer challenge</a> using React and Material-UI on the frontend and node/socketio on the backend. It allows users to create a temporary username and chat to other users in real time.</ProjectDescriptionText>
 					</ProjectDescription>
 					<ProjectLinks>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/chat-app'><ProjectLink type='button'>Github Repository</ProjectLink></a>
@@ -43,7 +43,7 @@ const HomePage = () =>
 					</ProjectTitle>
 					<a target="_blank" rel="noreferrer" href='https://roberts-clothes.herokuapp.com/'><img width={"100%"} src='./img/clothes.png' alt='instant chat app' /></a>
 					<ProjectDescription>
-						<ProjectDescriptionText>This mock clothes shop was made by me as a personal project using React and Chakra-UI on the frontend and Supabase for the backend.</ProjectDescriptionText>
+						<ProjectDescriptionText>This mock clothes shop was made by me as a personal project using React and Chakra-UI on the frontend and Supabase for the backend. It allows users to create accounts with email/password combonations, add fake products to their basket, change their username/displayname and delete their accounts.</ProjectDescriptionText>
 					</ProjectDescription>
 					<ProjectLinks>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/clothes-shop'><ProjectLink type='button'>Github Repository</ProjectLink></a>
@@ -57,7 +57,7 @@ const HomePage = () =>
 					</ProjectTitle>
 					<a target="_blank" rel="noreferrer" href='https://roberts-voting-app.web.app/'><img width={"100%"} src='./img/voting.png' alt='instant chat app' /></a>
 					<ProjectDescription>
-						<ProjectDescriptionText>This instant chat app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects">developer challenge</a> using React on the frontend and node/express and MongoDB on the backend.</ProjectDescriptionText>
+						<ProjectDescriptionText>This instant chat app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects">developer challenge</a> using React on the frontend and node/express and MongoDB on the backend. It allows users to vote anonymously on polls posted by other users, as well as post their own polls. </ProjectDescriptionText>
 					</ProjectDescription>
 					<ProjectLinks>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/VotingApp'><ProjectLink type='button'>Github Repository</ProjectLink></a>
