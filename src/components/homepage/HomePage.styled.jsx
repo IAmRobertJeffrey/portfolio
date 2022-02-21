@@ -31,7 +31,8 @@ export const IntroductionSocialsWrapper = styled.div`
 	align-items:center;
 	width:100%;
 	flex-wrap:wrap;
-	justify-content:space-between;
+	justify-content:space-around;
+	margin-top:30px;
 `
 
 export const IntroductionText = styled.h1`
@@ -40,9 +41,10 @@ export const IntroductionText = styled.h1`
 	font-weight:200;
 	font-size:1.5rem;
 	margin-bottom:30px;
+	text-align:center;
 `
 
-export const IntroductionTextLocation = styled.h1`
+export const IntroductionTextLocation = styled.span`
 	color:${props => props.color ? props.color : "black"};
 	font-family:poppinsThick;
 	font-weight:200;
@@ -70,7 +72,9 @@ color:${props => props.color ? props.color : "black"};
 	font-family:poppinsThick;
 	font-weight:200;
 	font-size:1.75rem;
-	text-decoration: underline;
+	margin-bottom:0px;
+	text-align:center;
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.25));
 `
 export const Project = styled.div`
 	width:100%;
@@ -128,4 +132,114 @@ export const ProjectLink = styled.button`
 		cursor: pointer;
 		border: 1px #ffffff solid;
 	}
+`
+
+export const ContactWrapper = styled.section`
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	padding:2rem;
+`
+
+export const ContactForm = styled.form`
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:2rem;
+`
+
+export const NameInput = styled.input`
+	width:100%;
+	color:#262534;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:1rem;
+	padding:1rem;
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+
+
+	border:2px solid #6c63ff;
+	border-radius:0.2rem;
+
+	&:focus {
+    outline: none !important;
+    border:2px solid #3f3d56;
+	border-radius:0.2rem;
+    
+}
+	
+`
+
+export const EmailInput = styled.input`
+	width:100%;
+	color:#262534;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:1rem;
+	padding:1rem;
+
+	border:2px solid #6c63ff;
+	border-radius:0.2rem;
+
+	&:focus {
+    outline: none !important;
+    border:2px solid #3f3d56;
+	border-radius:0.2rem;
+    
+}
+
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+`
+
+export const MessageInput = styled.textarea`
+	width:100%;
+	color:#262534;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:1rem;
+	padding:1rem;
+	height:6rem;
+	resize:none;
+
+	border:2px solid #6c63ff;
+	border-radius:0.2rem;
+
+	&:focus {
+    outline: none !important;
+    border:2px solid #3f3d56;
+	border-radius:0.2rem;
+    
+}
+
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+`
+
+export const SubmitButton = styled.button`
+	width:100%;
+	padding:1rem;
+	background:#262534;
+	border: 1px #6c63ff solid;
+	color:white;
+	font-family:poppinsThick;
+	font-weight:200;
+	height:100%;
+	font-size:1rem;
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+
+	&:hover
+	{
+		cursor: pointer;
+		border: 1px #ffffff solid;
+	}
+`
+
+export const ContactHeading = styled.h1`
+	color:${props => props.color ? props.color : "black"};
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .3));
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:1.75rem;
+	
 `
