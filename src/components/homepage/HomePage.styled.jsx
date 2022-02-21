@@ -224,7 +224,6 @@ export const SubmitButton = styled.button`
 	color:white;
 	font-family:poppinsThick;
 	font-weight:200;
-	height:100%;
 	font-size:1rem;
 	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
 
