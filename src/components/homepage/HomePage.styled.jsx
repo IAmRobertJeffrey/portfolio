@@ -147,7 +147,7 @@ export const ContactForm = styled.form`
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	gap:2rem;
+	
 `
 
 export const NameInput = styled.input`
@@ -158,6 +158,7 @@ export const NameInput = styled.input`
 	font-size:1rem;
 	padding:1rem;
 	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+	margin-bottom:2rem;
 
 
 	border:2px solid #6c63ff;
@@ -179,7 +180,7 @@ export const EmailInput = styled.input`
 	font-weight:200;
 	font-size:1rem;
 	padding:1rem;
-
+	margin-bottom:2rem;
 	border:2px solid #6c63ff;
 	border-radius:0.2rem;
 
@@ -202,7 +203,7 @@ export const MessageInput = styled.textarea`
 	padding:1rem;
 	height:6rem;
 	resize:none;
-
+	margin-bottom:2rem;
 	border:2px solid #6c63ff;
 	border-radius:0.2rem;
 
