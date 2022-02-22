@@ -1,16 +1,46 @@
 import React from 'react'
 import { HomePageWrapper, IntroductionSocialsWrapper, IntroductionTextLocation } from '../components/homepage/HomePage.styled'
-import { IntroductionWrapper, IntroductionText, IntroductionTextWrapper, ProjectsWrapper, ProjectsHeading, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
+import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 import { colors } from '../helpers/colors/colors';
+import { useState, useRef } from 'react';
+import { validateForm, resetForm } from '../helpers/formValidation';
 
 const HomePage = () =>
 {
 
+	const [name, setName] = useState("")
+	const [email, setEmail] = useState("")
+	const [message, setMessage] = useState("")
+
+	const [formSuccess, setFormSuccess] = useState("")
+
+	const [nameError, setNameError] = useState("")
+	const [emailError, setEmailError] = useState("")
+	const [messageError, setMessageError] = useState("")
+
+	const [nameColor, setNameColor] = useState(colors.blue)
+	const [emailColor, setEmailColor] = useState(colors.blue)
+	const [messageColor, setMessageColor] = useState(colors.blue)
+
+	const contactRef = useRef()
+
+	const handleContactScroll = () =>
+	{
+		contactRef.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
 	const handleContactSubmit = (e) =>
 	{
 		e.preventDefault();
-		console.log("submitted");
+		const valid = validateForm(name, setName, setNameColor, email, setEmail, setEmailColor, message, setMessage, setMessageColor, setNameError, setEmailError, setMessageError)
+
+		if (valid)
+		{
+			resetForm(setName, setEmail, setMessage)
+			setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
+		}
+
 	}
 
 	return (
@@ -22,7 +52,7 @@ const HomePage = () =>
 					</IntroductionText>
 
 
-					<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/clothes-shop'><ProjectLink type='button'>Contact Me</ProjectLink></a>
+					<ProjectLink onClick={handleContactScroll} type='button'>Contact Me</ProjectLink>
 					<IntroductionSocialsWrapper>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey'><AiFillGithub size="50px" color="#262534" /></a>
 						<a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/robert-jeffrey-4b885b211/'><AiFillLinkedin size="50px" color="#262534" /></a>
@@ -80,9 +110,13 @@ const HomePage = () =>
 			<ContactWrapper>
 				<ContactHeading color={colors.light}> Contact Me</ContactHeading>
 				<ContactForm>
-					<NameInput type={"text"} placeholder='Name*' />
-					<EmailInput type={"email"} placeholder='Email*' />
-					<MessageInput placeholder='Message' />
+					<FormSuccessLabel>{formSuccess}</FormSuccessLabel>
+					<FormErrorLabel>{nameError}</FormErrorLabel>
+					<NameInput ref={contactRef} color={nameColor} onChange={(e) => setName(e.target.value)} value={name} type={"text"} placeholder='Name*' required={true} />
+					<FormErrorLabel>{emailError}</FormErrorLabel>
+					<EmailInput color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
+					<FormErrorLabel>{messageError}</FormErrorLabel>
+					<MessageInput color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 					<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
 				</ContactForm>
 			</ContactWrapper>

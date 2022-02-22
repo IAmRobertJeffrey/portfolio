@@ -161,7 +161,7 @@ export const NameInput = styled.input`
 	margin-bottom:2rem;
 
 
-	border:2px solid #6c63ff;
+	border:2px solid ${props => props.color ? props.color : "#6c63ff"};
 	border-radius:0.2rem;
 
 	&:focus {
@@ -181,7 +181,7 @@ export const EmailInput = styled.input`
 	font-size:1rem;
 	padding:1rem;
 	margin-bottom:2rem;
-	border:2px solid #6c63ff;
+	border:2px solid ${props => props.color ? props.color : "#6c63ff"};
 	border-radius:0.2rem;
 
 	&:focus {
@@ -204,7 +204,7 @@ export const MessageInput = styled.textarea`
 	height:6rem;
 	resize:none;
 	margin-bottom:2rem;
-	border:2px solid #6c63ff;
+	border:2px solid ${props => props.color ? props.color : "#6c63ff"};
 	border-radius:0.2rem;
 
 	&:focus {
@@ -242,4 +242,21 @@ export const ContactHeading = styled.h1`
 	font-weight:200;
 	font-size:1.75rem;
 	
+`
+
+export const FormErrorLabel = styled.label`
+	color:red;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:0.75rem;
+
+`
+
+export const FormSuccessLabel = styled.label`
+	color:green;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:1rem;
+	text-align:center;
+	margin-bottom:25px;
 `
