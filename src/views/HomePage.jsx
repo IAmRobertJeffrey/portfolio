@@ -23,6 +23,7 @@ const HomePage = () =>
 	const [emailColor, setEmailColor] = useState(colors.blue)
 	const [messageColor, setMessageColor] = useState(colors.blue)
 
+
 	const contactRef = useRef()
 	const formRef = useRef()
 
