@@ -106,7 +106,7 @@ const HomePage = () =>
 					</ProjectTitle>
 					<a target="_blank" rel="noreferrer" href='https://roberts-voting-app.web.app/'><img width={"100%"} src='./img/voting.png' alt='instant chat app' /></a>
 					<ProjectDescription>
-						<ProjectDescriptionText>This instant chat app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects"><strong>developer challenge</strong></a> using React on the frontend and node/express and MongoDB on the backend. It allows users to vote anonymously on polls posted by other users, as well as post their own polls. </ProjectDescriptionText>
+						<ProjectDescriptionText>This public polling app was made by me as part of a <a target="_blank" rel="noreferrer" href="https://devjam.vercel.app/projects"><strong>developer challenge</strong></a> using React on the frontend and node/express and MongoDB on the backend. It allows users to vote anonymously on polls posted by other users, as well as post their own polls. </ProjectDescriptionText>
 					</ProjectDescription>
 					<ProjectLinks>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey/VotingApp'><ProjectLink type='button'>Github Repository</ProjectLink></a>
