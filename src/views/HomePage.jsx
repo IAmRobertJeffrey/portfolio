@@ -5,10 +5,10 @@ import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 import { colors } from '../helpers/colors/colors';
 import { useState, useRef } from 'react';
 import { validateForm, resetForm } from '../helpers/formValidation';
+import emailjs from '@emailjs/browser';
 
 const HomePage = () =>
 {
-
 	const [name, setName] = useState("")
 	const [email, setEmail] = useState("")
 	const [message, setMessage] = useState("")
@@ -24,6 +24,7 @@ const HomePage = () =>
 	const [messageColor, setMessageColor] = useState(colors.blue)
 
 	const contactRef = useRef()
+	const formRef = useRef()
 
 	const handleContactScroll = () =>
 	{
@@ -39,8 +40,16 @@ const HomePage = () =>
 		{
 			resetForm(setName, setEmail, setMessage)
 			setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
-		}
 
+			emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, 'template_500au3a', formRef.current, process.env.REACT_APP_USER_ID)
+				.then((result) =>
+				{
+					console.log(result.text);
+				}, (error) =>
+				{
+					// console.log(error.text);
+				});
+		}
 	}
 
 	return (
@@ -50,8 +59,6 @@ const HomePage = () =>
 					<IntroductionText color={colors.dark}>
 						Hey there👋 <br /> I'm Robert Jeffrey, An aspiring <strong><IntroductionTextLocation color={colors.blue}>Web Developer</IntroductionTextLocation></strong> based in <strong><IntroductionTextLocation color={colors.blue}>Basingstoke.</IntroductionTextLocation></strong>
 					</IntroductionText>
-
-
 					<ProjectLink onClick={handleContactScroll} type='button'>Contact Me</ProjectLink>
 					<IntroductionSocialsWrapper>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey'><AiFillGithub size="50px" color="#262534" /></a>
@@ -109,14 +116,14 @@ const HomePage = () =>
 			</ProjectsWrapper>
 			<ContactWrapper>
 				<ContactHeading color={colors.light}> Contact Me</ContactHeading>
-				<ContactForm>
+				<ContactForm ref={formRef}>
 					<FormSuccessLabel>{formSuccess}</FormSuccessLabel>
 					<FormErrorLabel>{nameError}</FormErrorLabel>
-					<NameInput ref={contactRef} color={nameColor} onChange={(e) => setName(e.target.value)} value={name} type={"text"} placeholder='Name*' required={true} />
+					<NameInput name='name' ref={contactRef} color={nameColor} onChange={(e) => setName(e.target.value)} value={name} type={"text"} placeholder='Name*' required={true} />
 					<FormErrorLabel>{emailError}</FormErrorLabel>
-					<EmailInput color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
+					<EmailInput name='email' color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
 					<FormErrorLabel>{messageError}</FormErrorLabel>
-					<MessageInput color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
+					<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 					<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
 				</ContactForm>
 			</ContactWrapper>
