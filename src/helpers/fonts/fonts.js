@@ -10,11 +10,14 @@ export default createGlobalStyle`
 
 	@font-face {
         font-family: 'poppins';
-        src: url(${poppins}) format('woff2')
+        src: url(${poppins}) format('woff2');
+		font-display: swap;
+		
     }
 
 	@font-face {
         font-family: 'poppinsThick';
-        src: url(${poppinsThick}) format('woff2')
+        src: url(${poppinsThick}) format('woff2');
+		font-display: swap;
     }
 `;
