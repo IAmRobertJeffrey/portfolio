@@ -1,6 +1,6 @@
 import React from 'react'
 import { HomePageWrapper, IntroductionSocialsWrapper, IntroductionTextLocation } from '../components/homepage/HomePage.styled'
-import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ContactButton, ImageWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
+import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ContactButton, ContactFormWrapper, ContactIconWrapper, ImageWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 import { GrContact } from 'react-icons/gr'
 import { colors } from '../helpers/colors/colors';
@@ -120,20 +120,23 @@ const HomePage = () =>
 				</Project>
 			</ProjectsWrapper>
 			<ContactWrapper>
+				<ContactFormWrapper>
 
-				<ContactHeading color={colors.blue}>Contact Me 📝</ContactHeading>
-				<ContactForm ref={formRef}>
-					<FormSuccessLabel>{formSuccess}</FormSuccessLabel>
-					<FormErrorLabel>{nameError}</FormErrorLabel>
-					<NameInput name='name' ref={contactRef} color={nameColor} onChange={(e) => setName(e.target.value)} value={name} type={"text"} placeholder='Name*' required={true} />
-					<FormErrorLabel>{emailError}</FormErrorLabel>
-					<EmailInput name='email' color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
-					<FormErrorLabel>{messageError}</FormErrorLabel>
-					<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
-					<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
-				</ContactForm>
-
-				<GrContact className='grIcon' size={"350px"} />
+					<ContactForm ref={formRef}>
+						<ContactHeading color={colors.blue}>Contact Me 📝</ContactHeading>
+						<FormSuccessLabel>{formSuccess}</FormSuccessLabel>
+						<FormErrorLabel>{nameError}</FormErrorLabel>
+						<NameInput name='name' ref={contactRef} color={nameColor} onChange={(e) => setName(e.target.value)} value={name} type={"text"} placeholder='Name*' required={true} />
+						<FormErrorLabel>{emailError}</FormErrorLabel>
+						<EmailInput name='email' color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
+						<FormErrorLabel>{messageError}</FormErrorLabel>
+						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
+						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
+					</ContactForm>
+				</ContactFormWrapper>
+				<ContactIconWrapper>
+					<GrContact className='grIcon' size={"350px"} />
+				</ContactIconWrapper>
 			</ContactWrapper>
 		</HomePageWrapper>
 	)

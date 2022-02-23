@@ -230,7 +230,7 @@ export const ProjectLink = styled.button`
 export const ContactWrapper = styled.section`
 	width:100%;
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	align-items:center;
 	padding:2rem;
 	justify-content:center;
@@ -253,6 +253,22 @@ export const ContactWrapper = styled.section`
 	
 `
 
+export const ContactIconWrapper = styled.div`
+	display:none;
+	@media (min-width: 600px)
+	{
+		
+	}
+	@media (min-width: 1300px)
+	{
+		display:flex;
+		width:50%;
+		align-items:center;
+		justify-content:center;
+		
+	}
+`
+
 export const ContactForm = styled.form`
 	width:100%;
 	display:flex;
@@ -262,11 +278,31 @@ export const ContactForm = styled.form`
 
 	@media (min-width: 600px)
 	{
+		
+	}
+	@media (min-width: 1300px)
+	{
+		
+		width:75%
+	}
+	
+`
+
+export const ContactFormWrapper = styled.div`
+	
+
+	@media (min-width: 600px)
+	{
 		width:75%
 	}
 	@media (min-width: 1300px)
 	{
-		width:30%;
+		
+		width:50%;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
 	}
 	
 `

@@ -24,11 +24,7 @@ body, html
 	flex-direction: column;
 }
 
-svg
-{
-	min-width: 100%;
-	
-}
+
 
 a
 {
@@ -54,6 +50,7 @@ a
 	@media only screen and (min-width: 1300px) 
 	{
 		.grIcon{
+			margin-top:100px;
 			display: block;
 		}
 	}
