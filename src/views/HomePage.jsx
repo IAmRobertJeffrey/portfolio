@@ -138,7 +138,7 @@ const HomePage = () =>
 						<FormErrorLabel>{messageError}</FormErrorLabel>
 						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
-						<ReCAPTCHA
+						<ReCAPTCHA style={{ margin: "2rem" }}
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}
 
