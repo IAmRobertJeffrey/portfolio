@@ -38,3 +38,6 @@ a
 	font-family: PoppinsThick;
 }
 
+.grIcon path{
+	stroke: #262534;
+}
