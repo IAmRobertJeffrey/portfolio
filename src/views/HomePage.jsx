@@ -7,6 +7,7 @@ import { colors } from '../helpers/colors/colors';
 import { useState, useRef } from 'react';
 import { validateForm, resetForm } from '../helpers/formValidation';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const HomePage = () =>
 {
@@ -30,6 +31,11 @@ const HomePage = () =>
 	const handleContactScroll = () =>
 	{
 		contactRef.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	function onReCaptcha(value)
+	{
+		console.log("Captcha value:", value);
 	}
 
 	const handleContactSubmit = (e) =>
@@ -64,7 +70,7 @@ const HomePage = () =>
 					<IntroductionSocialsWrapper>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey'><AiFillGithub size="50px" color="#262534" /></a>
 						<a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/robert-jeffrey-4b885b211/'><AiFillLinkedin size="50px" color="#262534" /></a>
-						<a href='mailto:iamrobertjeffrey@gmail.com'><AiFillMail size="50px" color="#262534" /></a>
+						<a href='mailto:contact@robertjeffrey.co.uk'><AiFillMail size="50px" color="#262534" /></a>
 					</IntroductionSocialsWrapper>
 				</IntroductionTextWrapper>
 				<ImageWrapper>
@@ -132,6 +138,10 @@ const HomePage = () =>
 						<FormErrorLabel>{messageError}</FormErrorLabel>
 						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
+						<ReCAPTCHA
+							onChange={onReCaptcha}
+							sitekey={process.env.REACT_APP_SITE_KEY}
+						/>
 					</ContactForm>
 				</ContactFormWrapper>
 				<ContactIconWrapper>
