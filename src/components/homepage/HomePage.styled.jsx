@@ -255,6 +255,8 @@ export const ContactWrapper = styled.section`
 
 export const ContactIconWrapper = styled.div`
 	display:none;
+	
+		
 	@media (min-width: 600px)
 	{
 		
@@ -265,7 +267,7 @@ export const ContactIconWrapper = styled.div`
 		width:50%;
 		align-items:center;
 		justify-content:center;
-		
+		filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
 	}
 `
 

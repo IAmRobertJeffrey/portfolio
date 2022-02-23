@@ -36,10 +36,12 @@ a
 
 .grIcon path{
 	stroke: #262534;
+	
 }
 
 .grIcon{
 	display: none;
+	
 }
 
 	@media only screen and (min-width: 600px) 
@@ -52,5 +54,6 @@ a
 		.grIcon{
 			margin-top:100px;
 			display: block;
+			
 		}
 	}
