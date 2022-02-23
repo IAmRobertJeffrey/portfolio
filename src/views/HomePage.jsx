@@ -137,12 +137,14 @@ const HomePage = () =>
 						<EmailInput name='email' color={emailColor} onChange={(e) => setEmail(e.target.value)} value={email} type={"email"} placeholder='Email*' required={true} />
 						<FormErrorLabel>{messageError}</FormErrorLabel>
 						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
-						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
-						<ReCAPTCHA style={{ margin: "2rem" }}
+
+						<ReCAPTCHA style={{ marginBottom: "2rem" }}
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}
 
 						/>
+						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
+
 					</ContactForm>
 				</ContactFormWrapper>
 				<ContactIconWrapper>
