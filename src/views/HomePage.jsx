@@ -38,8 +38,8 @@ const HomePage = () =>
 
 	function onReCaptcha(value)
 	{
-		console.log("Captcha value:", value);
-		if (value === true)
+
+		if (value)
 		{
 			setCaptcha(true)
 		}
