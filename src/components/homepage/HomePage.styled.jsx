@@ -14,6 +14,17 @@ export const IntroductionWrapper = styled.section`
 	align-items:center;
 	justify-content:center;
 	padding:2rem;
+	@media (min-width: 600px)
+	{
+		padding-top:4rem;
+		padding-bottom:4rem;
+	}
+	@media (min-width: 1300px)
+	{
+		padding-top:8rem;
+		padding-bottom:8rem;
+	}
+	
 `
 export const IntroductionTextWrapper = styled.div`
 	display:flex;
@@ -21,6 +32,31 @@ export const IntroductionTextWrapper = styled.div`
 	justify-content:center;
 	width:100%;
 	align-items:center;
+
+	@media (min-width: 610px)
+	{
+		width:50%;
+	}
+	@media (min-width: 1300px)
+	{
+		width:60%;
+		
+	}
+`
+
+export const ImageWrapper = styled.div`
+	display:none;
+	
+	@media (min-width: 1300px)
+	{
+		display:flex;
+		align-items:center;
+		justify-items:center;
+		width:80%;
+		flex-direction:column;
+
+		
+	}
 `
 
 export const IntroductionSocialsWrapper = styled.div`
@@ -33,6 +69,14 @@ export const IntroductionSocialsWrapper = styled.div`
 	flex-wrap:wrap;
 	justify-content:space-around;
 	margin-top:30px;
+	@media (min-width: 600px)
+	{
+		
+	}
+	@media (min-width: 1300px)
+	{
+		width:50%;
+	}
 `
 
 export const IntroductionText = styled.h1`
@@ -42,6 +86,14 @@ export const IntroductionText = styled.h1`
 	font-size:1.5rem;
 	margin-bottom:30px;
 	text-align:center;
+	@media (min-width: 600px)
+	{
+		
+	}
+	@media (min-width: 1300px)
+	{
+		width:50%;
+	}
 `
 
 export const IntroductionTextLocation = styled.span`
@@ -55,6 +107,34 @@ export const IntroductionTextLocation = styled.span`
 	display: inline;
 `
 
+export const ContactButton = styled.button`
+	width:100%;
+	padding:1rem;
+	background:#262534;
+	border: 1px #6c63ff solid;
+	color:white;
+	font-family:poppinsThick;
+	font-weight:200;
+	height:100%;
+	font-size:1rem;
+	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.5));
+
+	&:hover
+	{
+		cursor: pointer;
+		border: 1px #ffffff solid;
+	}
+
+	@media (min-width: 600px)
+	{
+		
+	}
+	@media (min-width: 1300px)
+	{
+		width:50%;
+	}
+
+`
 
 export const ProjectsWrapper = styled.section`
 	width:100%;

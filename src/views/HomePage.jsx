@@ -1,6 +1,6 @@
 import React from 'react'
 import { HomePageWrapper, IntroductionSocialsWrapper, IntroductionTextLocation } from '../components/homepage/HomePage.styled'
-import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
+import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ContactButton, ImageWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 import { colors } from '../helpers/colors/colors';
 import { useState, useRef } from 'react';
@@ -59,14 +59,18 @@ const HomePage = () =>
 					<IntroductionText color={colors.dark}>
 						Hey there👋 <br /> I'm Robert Jeffrey, An aspiring <strong><IntroductionTextLocation color={colors.blue}>Web Developer</IntroductionTextLocation></strong> based in <strong><IntroductionTextLocation color={colors.blue}>Basingstoke.</IntroductionTextLocation></strong>
 					</IntroductionText>
-					<ProjectLink onClick={handleContactScroll} type='button'>Contact Me</ProjectLink>
+					<ContactButton onClick={handleContactScroll} type='button'>Contact Me</ContactButton>
 					<IntroductionSocialsWrapper>
 						<a target="_blank" rel="noreferrer" href='https://github.com/IAmRobertJeffrey'><AiFillGithub size="50px" color="#262534" /></a>
 						<a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/robert-jeffrey-4b885b211/'><AiFillLinkedin size="50px" color="#262534" /></a>
 						<a href='mailto:iamrobertjeffrey@gmail.com'><AiFillMail size="50px" color="#262534" /></a>
 					</IntroductionSocialsWrapper>
 				</IntroductionTextWrapper>
+				<ImageWrapper>
+					<img src='./img/undraw_programming.svg' style={{ width: "65%" }} alt='web developer' />
+				</ImageWrapper>
 			</IntroductionWrapper>
+
 			<ProjectsWrapper color={colors.dark}>
 				<ProjectsHeading color={colors.white}> Web development projects</ProjectsHeading>
 				<ProjectDescriptionText>
