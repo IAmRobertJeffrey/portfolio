@@ -26,7 +26,7 @@ const HomePage = () =>
 	const [messageColor, setMessageColor] = useState(colors.blue)
 
 	const [captcha, setCaptcha] = useState(false)
-	const [catchaError, setCaptchaError] = useState("")
+	const [captchaError, setCaptchaError] = useState("")
 
 	const contactRef = useRef()
 	const formRef = useRef()
@@ -153,7 +153,7 @@ const HomePage = () =>
 						<FormErrorLabel>{messageError}</FormErrorLabel>
 						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 
-						<CaptchaErrorLabel>{captcha}</CaptchaErrorLabel>
+						<CaptchaErrorLabel>{captchaError}</CaptchaErrorLabel>
 						<ReCAPTCHA style={{ marginBottom: "2rem" }}
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}
