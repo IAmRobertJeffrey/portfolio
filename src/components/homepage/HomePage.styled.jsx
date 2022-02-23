@@ -9,6 +9,12 @@ export const HomePageWrapper = styled.main`
 	justify-content:center;
 `
 export const IntroductionWrapper = styled.section`
+
+	/* background: url("./img/wave.svg");
+	background-position:fixed;
+	background-size:0%;
+	background-repeat:no-repeat; */
+
 	width:100%;
 	display:flex;
 	align-items:center;
@@ -18,12 +24,19 @@ export const IntroductionWrapper = styled.section`
 	{
 		padding-top:4rem;
 		padding-bottom:4rem;
+		
 	}
 	@media (min-width: 1300px)
 	{
 		padding-top:8rem;
 		padding-bottom:8rem;
+		
+		//possibly dangerous
+		/* min-height:100vh; */
+		/* background-size:100%;  */
 	}
+
+	
 	
 `
 export const IntroductionTextWrapper = styled.div`
@@ -220,6 +233,24 @@ export const ContactWrapper = styled.section`
 	flex-direction:column;
 	align-items:center;
 	padding:2rem;
+	justify-content:center;
+
+	@media (min-width: 600px)
+	{
+		padding-top:4rem;
+		padding-bottom:4rem;
+		
+	}
+	@media (min-width: 1300px)
+	{
+		padding-top:8rem;
+		padding-bottom:8rem;
+		
+		//possibly dangerous
+		/* min-height:100vh; */
+		/* background-size:100%;  */
+	}
+	
 `
 
 export const ContactForm = styled.form`
@@ -227,6 +258,16 @@ export const ContactForm = styled.form`
 	display:flex;
 	flex-direction:column;
 	align-items:center;
+	
+
+	@media (min-width: 600px)
+	{
+		width:75%
+	}
+	@media (min-width: 1300px)
+	{
+		width:30%;
+	}
 	
 `
 
