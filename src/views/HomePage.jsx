@@ -141,6 +141,7 @@ const HomePage = () =>
 						<ReCAPTCHA
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}
+
 						/>
 					</ContactForm>
 				</ContactFormWrapper>
