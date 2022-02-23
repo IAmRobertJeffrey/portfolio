@@ -49,7 +49,7 @@ const HomePage = () =>
 	const handleContactSubmit = (e) =>
 	{
 		e.preventDefault();
-		const valid = validateForm(name, setName, setNameColor, email, setEmail, setEmailColor, message, setMessage, setMessageColor, setNameError, setEmailError, setMessageError)
+		const valid = validateForm(recaptchaRef.current, name, setName, setNameColor, email, setEmail, setEmailColor, message, setMessage, setMessageColor, setNameError, setEmailError, setMessageError)
 
 		if (valid)
 		{

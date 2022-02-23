@@ -1,6 +1,6 @@
 import { colors } from "./colors/colors"
 
-export const validateForm = (name, setName, setNameColor, email, setEmail, setEmailColor, message, setMessage, setMessageColor, setNameError, setEmailError, setMessageError) =>
+export const validateForm = (recaptchaRef, name, setName, setNameColor, email, setEmail, setEmailColor, message, setMessage, setMessageColor, setNameError, setEmailError, setMessageError) =>
 {
 	let checkEmpty = true;
 
@@ -10,6 +10,8 @@ export const validateForm = (name, setName, setNameColor, email, setEmail, setEm
 		setName("")
 		setNameColor("red")
 		setNameError("Name Field must not be left empty.")
+		recaptchaRef.reset();
+
 	}
 	else
 	{
@@ -22,6 +24,7 @@ export const validateForm = (name, setName, setNameColor, email, setEmail, setEm
 		setEmail("")
 		setEmailColor("red")
 		setEmailError("Email Field must not be left empty.")
+		recaptchaRef.reset();
 
 	}
 	else
@@ -34,6 +37,7 @@ export const validateForm = (name, setName, setNameColor, email, setEmail, setEm
 			checkEmpty = false;
 			setEmailColor("red")
 			setEmailError("Email Field must include '@' symbol.")
+			recaptchaRef.reset();
 		}
 
 	}
@@ -43,6 +47,7 @@ export const validateForm = (name, setName, setNameColor, email, setEmail, setEm
 		setMessage("")
 		setMessageColor("red")
 		setMessageError("Message field must not be left empty.")
+		recaptchaRef.reset();
 	}
 	else
 	{
@@ -58,6 +63,7 @@ export const validateForm = (name, setName, setNameColor, email, setEmail, setEm
 	}
 	else
 	{
+		recaptchaRef.reset();
 		return false;
 	}
 
