@@ -1,6 +1,6 @@
 import React from 'react'
 import { HomePageWrapper, IntroductionSocialsWrapper, IntroductionTextLocation } from '../components/homepage/HomePage.styled'
-import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, ContactButton, ContactFormWrapper, ContactIconWrapper, ImageWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
+import { IntroductionWrapper, FormSuccessLabel, IntroductionText, IntroductionTextWrapper, CaptchaErrorLabel, ContactButton, ContactFormWrapper, ContactIconWrapper, ImageWrapper, ProjectsWrapper, ProjectsHeading, FormErrorLabel, Project, ProjectLink, ProjectDescription, ProjectTitle, ContactHeading, ContactWrapper, ProjectLinks, ProjectDescriptionText, ContactForm, NameInput, EmailInput, MessageInput, SubmitButton } from '../components/homepage/HomePage.styled'
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 import { GrContact } from 'react-icons/gr'
 import { colors } from '../helpers/colors/colors';
@@ -25,6 +25,9 @@ const HomePage = () =>
 	const [emailColor, setEmailColor] = useState(colors.blue)
 	const [messageColor, setMessageColor] = useState(colors.blue)
 
+	const [captcha, setCaptcha] = useState(false)
+	const [catchaError, setCaptchaError] = useState("")
+
 	const contactRef = useRef()
 	const formRef = useRef()
 
@@ -36,6 +39,10 @@ const HomePage = () =>
 	function onReCaptcha(value)
 	{
 		console.log("Captcha value:", value);
+		if (value === true)
+		{
+			setCaptcha(true)
+		}
 	}
 
 	const handleContactSubmit = (e) =>
@@ -45,17 +52,25 @@ const HomePage = () =>
 
 		if (valid)
 		{
-			resetForm(setName, setEmail, setMessage)
-			setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
+			if (captcha)
+			{
+				resetForm(setName, setEmail, setMessage)
+				setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
 
-			emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, 'template_500au3a', formRef.current, process.env.REACT_APP_USER_ID)
-				.then((result) =>
-				{
-					console.log(result.text);
-				}, (error) =>
-				{
-					// console.log(error.text);
-				});
+				emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, 'template_500au3a', formRef.current, process.env.REACT_APP_USER_ID)
+					.then((result) =>
+					{
+						console.log(result.text);
+					}, (error) =>
+					{
+						// console.log(error.text);
+					});
+			}
+			else
+			{
+				setCaptchaError("Please tick the Captcha box.")
+			}
+
 		}
 	}
 
@@ -138,6 +153,7 @@ const HomePage = () =>
 						<FormErrorLabel>{messageError}</FormErrorLabel>
 						<MessageInput name='message' color={messageColor} onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Message*' required={true} />
 
+						<CaptchaErrorLabel>{captcha}</CaptchaErrorLabel>
 						<ReCAPTCHA style={{ marginBottom: "2rem" }}
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}

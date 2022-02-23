@@ -419,3 +419,10 @@ export const FormSuccessLabel = styled.label`
 	text-align:center;
 	margin-bottom:25px;
 `
+
+export const CaptchaErrorLabel = styled.label`
+	color:red;
+	font-family:poppinsThick;
+	font-weight:200;
+	font-size:0.75rem;
+`
