@@ -30,6 +30,7 @@ const HomePage = () =>
 
 	const contactRef = useRef()
 	const formRef = useRef()
+	const recaptchaRef = React.createRef();
 
 	const handleContactScroll = () =>
 	{
@@ -56,6 +57,8 @@ const HomePage = () =>
 			{
 				resetForm(setName, setEmail, setMessage)
 				setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
+				setCaptchaError("");
+				recaptchaRef.reset();
 
 				emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, 'template_500au3a', formRef.current, process.env.REACT_APP_USER_ID)
 					.then((result) =>
@@ -157,7 +160,7 @@ const HomePage = () =>
 						<ReCAPTCHA style={{ marginBottom: "2rem" }}
 							onChange={onReCaptcha}
 							sitekey={process.env.REACT_APP_SITE_KEY}
-
+							ref={recaptchaRef}
 						/>
 						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
 
