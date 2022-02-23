@@ -58,7 +58,7 @@ const HomePage = () =>
 				resetForm(setName, setEmail, setMessage)
 				setFormSuccess("Submission successful, thank you! I will get back to you as soon as possible.")
 				setCaptchaError("");
-				recaptchaRef.reset();
+				recaptchaRef.current.reset();
 
 				emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, 'template_500au3a', formRef.current, process.env.REACT_APP_USER_ID)
 					.then((result) =>
