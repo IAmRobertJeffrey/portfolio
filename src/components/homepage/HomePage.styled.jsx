@@ -175,6 +175,20 @@ export const Project = styled.div`
 	flex-direction:column;
 	align-items:center;
 	margin-bottom:2rem;
+
+	@media (min-width: 600px)
+	{
+		width:75%
+	}
+	@media (min-width: 1300px)
+	{
+		
+		width:50%;
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+	}
 `
 
 export const ProjectDescription = styled.div`
