@@ -163,7 +163,6 @@ const HomePage = () =>
 							ref={recaptchaRef}
 						/>
 						<SubmitButton onClick={(e) => handleContactSubmit(e)} type={"submit"}>Submit</SubmitButton>
-
 					</ContactForm>
 				</ContactFormWrapper>
 				<ContactIconWrapper>
